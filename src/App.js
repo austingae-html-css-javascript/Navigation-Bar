@@ -11,6 +11,21 @@ import logo from "./Images/uscsso-logo.png";
 const App = () => {
   return (
     <Router>
+      <nav>
+        <div className="nav-bar">
+          <div className="nav-bar__left-container">
+            <h1 className="nav-bar__title">USCSS</h1>
+            <img className="nav-bar__logo" src={logo}/>
+          </div>
+          <div className="nav-bar__right-container">
+            <Link className="nav-bar__link nav-bar__link--margin-right" to="/">Home</Link>
+            <Link className="nav-bar__link nav-bar__link--margin-right" to="/events">Events</Link>
+            <Link className="nav-bar__link nav-bar__link--margin-right" to="/our-work">Our Work</Link>
+            <Link className="nav-bar__link" to="/about">About</Link>
+          </div>
+        </div>
+      </nav>
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/events" element={<Events />}></Route>
@@ -18,20 +33,7 @@ const App = () => {
         <Route path="/about" element={<About />}></Route>
       </Routes>
 
-      <nav>
-        <div>
-          <div>
-            <h1>USCSS</h1>
-            <img src={logo}/>
-          </div>
-          <div>
-            <Link to="/">Home</Link>
-            <Link to="/events">Events</Link>
-            <Link to="/our-work">Our Work</Link>
-            <Link to="/about">About</Link>
-          </div>
-        </div>
-      </nav>
+
     </Router>
   );
 }
@@ -66,9 +68,9 @@ Navigation Bar Process:
   </div>
 </nav>
     3) decorate the HTML elements in CSS 
-        1) Imagine how you want it to look like.
-        2) Then use width, padding, border, and margin.
-        3) Then calculate: 
+        1) Imagine how you want it to look like. - Yes. 
+        2) Then use width, padding, border, and margin. - Yes. 
+        3) Then calculate: - Yes. 
             If * {box-sizing: content-box}
             - Parent Div's Width = Child Div's Width+Padding+Border+Margin
             - Parent Div's Width = Block Element's Width+Padding+Border+Margin
