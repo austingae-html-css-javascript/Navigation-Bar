@@ -1,5 +1,6 @@
 I created a navigation bar in ReactJS by following my thought process: 
 
+CREATING A NAVIGATION BAR: 
 To install React Router into the project, type in terminal: "npm install react-router-dom@6" - Yes. 
 
 Navigation Bar Process: 
@@ -34,3 +35,28 @@ Navigation Bar Process:
             - Parent Div's Width = Block Element's Width+Padding+Border+Margin
             - However, Parent Div's Width != Inline Element's Width+Padding+Border+Margin
 */
+        
+A BUTTON, IF CLICKED, WILL TAKE YOU TO A PAGE:
+1) This button, if clicked, will navigate to a path.
+       import { useNavigate } from "react-router-dom";
+       let navigate = useNavigate();
+       <button onClick={() => {navigate("../events/asean-meeting")}}> Learn More </button>
+        
+2) That path will go to a Component.
+        <Route path="/events/:event" element={<EventPage />}></Route>
+
+3) Then, in the Component, get :event, and then display the right page.
+        import { useParams } from "react-router-dom";
+        let { event } = useParams();
+        
+        if (event == "asean-meeting") {
+          return (
+              <div>ASEAN MEETING TODAY</div>
+        );
+        }
+        else if (event == "world-war-two") {
+          return (
+              <div>WORLD WAR II CONFERENCE</div>
+        );
+        }          
+        
